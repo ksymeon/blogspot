@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+ * ==========================================================================
+ * "Mandelbrot Set in HTML5 Canvas" License
+ * GNU General Public License version 3.0 (GPLv3)
+ * ==========================================================================
+ * This file is part of "Mandelbrot Set in HTML5 Canvas"
+ *
+ * "Mandelbrot Set in HTML5 Canvas" is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * "Mandelbrot Set in HTML5 Canvas" is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with "Mandelbrot Set in HTML5 Canvas". If not, see <http://www.gnu.org/licenses/>.
+ * ==========================================================================
+-->
+<html lang="en">
+<head>
+  <title>Mandelbrot Set in HTML5</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="mandel.css" media="screen"/>
+  <script type="text/javascript" src="util.js"></script>
+  <script type="text/javascript" src="canvas_common.js"></script>
+  <script type="text/javascript" src="mandel.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+
+<header id="header">
+  <h1>Mandelbrot Set Chrome App v0.07</h1>
+
+  <p class="copyright">written by Kostas Symeonidis, &copy;2009-2012 atopon.org</p>
+</header>
+
+<div id="links">
+  <a href="#" onclick="aboutShow();">About</a> &mdash;
+  <a href="http://twitter.com/ksymeon/" target="_new">Twitter</a> &mdash;
+  <a href="http://www.cylog.org/contact-us.do" target="_new">Contact</a> &mdash;
+  <a href="http://www.gnu.org/licenses/gpl-3.0.html" target="_new">GPLv3</a>
+</div>
+
+<div id="sizes">
+  <ul class="presets">
+    <li><a href="#" onclick="resetMandel(iCanvasWidth, iCanvasHeight); computeMandel();">Reset</a></li>
+    <li><a href="#" id="preset_0" onclick="load(this, 240,240);">240</a></li>
+    <li><a href="#" id="preset_1" onclick="load(this, 320,320);">320</a></li>
+    <li><a href="#" id="preset_2" class="selected" onclick="load(this, 360,360);">360</a></li>
+    <li><a href="#" id="preset_3" onclick="load(this, 480,480);">480</a></li>
+    <li><a href="#" id="preset_4" onclick="load(this, 640,640);">640</a></li>
+    <li><a href="#" id="preset_5" onclick="load(this, 768,768);">768</a></li>
+    <li><a href="#" id="preset_6" onclick="load(this, 1024,1024);">1024</a></li>
+    <li><a href="#" id="preset_7" onclick="load(this, 1920,1080);">FHD</a></li>
+    <li><a href="#" onclick="convertToPng('canvas', 'output');">PNG</a></li>
+  </ul>
+</div>
+
+<div id="skata"></div>
+
+<canvas id="canvas" width="360" height="360">
+  It seems that your browser does not support the "canvas" tag. You are either
+  using an out-dated browser, or a "modern" browser that doesn't really support modern
+  technology. Upgrade to something better is highly recommended.
+</canvas>
+
+<footer>
+  <p><strong>Click &amp; drag</strong> a new square on the Mandelbrot set to zoom in.<br/>
+  Click <strong>[reset]</strong> to zoom out to the initial coordinates.</p>
+</footer>
+
+<div id="about">
+
+  <p><strong>"Mandelbrot Set"</strong> is an experiment on HTML5 and the &lt;canvas&gt; tag.
+    It is compatible with all modern web browsers.<br/>
+    <br/>
+    It can be used as a benchmark of the Javascript engine of your browser in combination
+    with the client machine that it runs on. For example a Google Chrome on a reasonable 2GHz+
+    dual-core machine should produce a 360x360 Mandelbrot set in about 0.1 second.<br/>
+    <br/>
+    Hope you'll find this application useful,<br/>
+    <br/>
+    Kostas Symeonidis
+  </p>
+
+  <p><strong>License and Contact Information</strong><br/>
+    "Mandelbrot Set" is released as open source under the
+    <strong>GNU General Public License version 3 (GPLv3)</strong>.
+    For more information on how to apply and follow the GNU GPL, see <a href="http://www.gnu.org/licenses/"
+                                                                        target="_new">http://www.gnu.org/licenses/</a>.
+    <br/><br/>
+    Contact Kostas Symeonidis at: <a href="http://www.cylog.org/contact-us.do" target="_new">http://www.cylog.org/contact-us.do</a>.<br/>
+    Follow me on Twitter: <a href="http://www.twitter.com/ksymeon" target="_new">@ksymeon</a>
+  </p>
+
+  <p style="text-align:right;"><a href="#" onclick="aboutHide();">Close</a></p>
+</div>
+
+</body>
+</html>
