@@ -1,0 +1,27 @@
+# use glob syntax.
+syntax: glob
+
+desktop.ini
+build-local.properties
+config-local.properties
+workspace.xml
+*.zip
+*.iws
+*.~*
+.DS_Store
+
+# switch to regexp syntax.
+syntax: regexp
+^lib/.*
+^out/production/.*
+^out/test/.*
+^out/coverage/.*
+^.*/out/production/.*
+^.*/out/test/.*
+^.*/out/coverage/.*
+^.idea/dictionaries/.*
+
+# all generated JARs within bin folders
+bin/.*\.jar
+lib/.*\.jar
+logs/.*\.log.*
